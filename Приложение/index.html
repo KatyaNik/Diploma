@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Система мониторинга ЗОЖ - Авторизация</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h2 {
+            color: #2e7d32;
+            margin: 0;
+        }
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            border-color: #4caf50;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .checkbox-group input {
+            margin-top: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #43a047;
+        }
+        .security-badge {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <div class="header">
+        <h2>Мониторинг здоровья</h2>
+        <p>Безопасный вход в систему</p>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="example@mail.ru" required>
+        </div>
+
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" placeholder="••••••••" required>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="consent" required>
+            <label for="consent">
+                Я даю согласие на обработку моих персональных данных (в т.ч. сведений о здоровье) согласно ФЗ-152 и принимаю условия политики конфиденциальности.
+            </label>
+        </div>
+
+        <button type="button">Войти в систему</button>
+    </form>
+
+    
+</div>
+
+</body>
+</html>

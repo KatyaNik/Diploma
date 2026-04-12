@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация в системе ЗОЖ Мониторинга</title>
+    <style>
+        :root {
+            --primary-color: #2c7a7b;
+            --secondary-color: #48bb78;
+            --bg-color: #f7fafc;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 20px 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        .header p {
+            color: #718096;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #4a5568;
+            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background: var(--secondary-color);
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+        }
+        .grid-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .consent-box {
+            background: #f0fff4;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #c6f6d5;
+            margin: 20px 0;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #2f855a;
+        }
+        .consent-box input {
+            width: auto;
+            margin-right: 10px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            background: #285e61;
+        }
+        .security-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #a0aec0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #edf2f7;
+            border-radius: 10px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Создание профиля здоровья</h1>
+        <p>Ваши данные надежно защищены в соответствии с ФЗ-152</p>
+    </div>
+
+    <form>
+        <!-- Секция 1: Аккаунт -->
+        <div class="section-title">Данные учетной записи</div>
+        <div class="form-group">
+            <label>E-mail (Логин)</label>
+            <input type="email" placeholder="example@mail.ru" required>
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" placeholder="Минимум 8 символов" required>
+        </div>
+
+        <!-- Секция 2: Физические показатели -->
+        <div class="section-title">Физические показатели</div>
+        <div class="grid-inputs">
+            <div class="form-group">
+                <label>Рост (см)</label>
+                <input type="number" placeholder="175" min="50" max="250">
+            </div>
+            <div class="form-group">
+                <label>Вес (кг)</label>
+                <input type="number" step="0.1" placeholder="70.5" min="30" max="300">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Цель мониторинга</label>
+            <select>
+                <option>Поддержание веса</option>
+                <option>Снижение массы тела</option>
+                <option>Набор мышечной массы</option>
+                <option>Контроль питания по мед. показаниям</option>
+            </select>
+        </div>
+
+        <!-- Секция 3: Особые отметки (Структурированный список) -->
+<div class="section-title">Медицинские особенности и ограничения</div>
+<div class="health-checklist">
+    <div class="check-item">
+        <input type="checkbox" id="diabetes" name="health_tags">
+        <label for="diabetes">Сахарный диабет</label>
+    </div>
+    <div class="check-item">
+        <input type="checkbox" id="lactose" name="health_tags">
+        <label for="lactose">Непереносимость лактозы</label>
+    </div>
+    <div class="check-item">
+        <input type="checkbox" id="gluten" name="health_tags">
+        <label for="gluten">Безглютеновая диета</label>
+    </div>
+    <div class="check-item">
+        <input type="checkbox" id="nuts" name="health_tags">
+        <label for="nuts">Аллергия на орехи</label>
+    </div>
+    <div class="check-item">
+        <input type="checkbox" id="seafood" name="health_tags">
+        <label for="seafood">Аллергия на морепродукты</label>
+    </div>
+    <div class="check-item">
+        <input type="checkbox" id="gastritis" name="health_tags">
+        <label for="gastritis">Гастрит / Проблемы ЖКТ</label>
+    </div>
+</div>
+
+<style>
+    /* Добавь эти стили в блок <style> */
+    .health-checklist {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Список в две колонки */
+        gap: 10px;
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+    }
+    .check-item {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        color: #4a5568;
+    }
+    .check-item input {
+        width: auto;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+    .check-item label {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+</style>
+
+        <!-- Согласие (Важно для курсовой!) -->
+        <div class="consent-box">
+            <label style="display: flex; align-items: flex-start;">
+                <input type="checkbox" required>
+                <span>Я подтверждаю достоверность введенных данных и даю согласие на обработку моих персональных данных, включая сведения о состоянии здоровья, в целях формирования персонального рациона. Данные хранятся на защищенных серверах в РФ.</span>
+            </label>
+        </div>
+
+        <button type="button" class="btn-submit">Создать защищенный профиль</button>
+    </form>
+
+    
+</div>
+
+</body>
+</html>
